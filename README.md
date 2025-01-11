@@ -1,2 +1,2 @@
-# Checkers
-Game of checkers created using Unity
+# Pente
+Game of Pente created using ASCII_Board_Game_Engine
