@@ -13,7 +13,7 @@ public:
 	display(frame* main_display, frame* multipurpose_display);
 	void display_board(const int(&board_data)[NUMBER_OF_ROWS][NUMBER_OF_COLUMNS], int cursor_row, int cursor_column);
 	void set_board_directions_content(const std::string& content);
-	std::string get_player_username(const std::string& prompt);
+	std::string get_player_data(const std::string& prompt);
 
 private:
 	label multipurpose_label;

@@ -73,7 +73,7 @@ void display::set_board_directions_content(const std::string& content)
 	directions_label.set_output(content);
 }
 
-std::string display::get_player_username(const std::string& prompt)
+std::string display::get_player_data(const std::string& prompt)
 {
 	int input = ascii_io::undefined;
 	multipurpose_label.set_output(prompt);

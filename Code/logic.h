@@ -18,7 +18,7 @@ public:
 	int get_cursor_column();
 	void get_board_info(int(&board_info)[19][19]);
 	void reset();
-	void place_piece(int row, int column, int player);
+	bool place_piece(int row, int column, int player);
 
 private:
 	int cursor_row = 0;

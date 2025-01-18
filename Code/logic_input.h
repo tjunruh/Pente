@@ -1,8 +1,7 @@
 #pragma once
 
 enum input {
-	one = 0,
-	q,
+	q = 0,
 	_up,
 	_down,
 	_right,
