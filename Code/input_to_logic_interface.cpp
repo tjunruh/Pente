@@ -27,4 +27,6 @@ input interface::user_to_logic(int user_input)
 	{
 		return enter;
 	}
+
+	return undefined;
 }

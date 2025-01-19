@@ -22,14 +22,14 @@ void game_operations::game_loop()
 	do
 	{
 		std::string number_of_players_string = display_manager.get_player_data("How many players are playing?");
-		if ((number_of_players_string.length() == 1) && isdigit(number_of_players_string[0]) && (stoi(number_of_players_string) <= 4) && (stoi(number_of_players_string) > 0))
+		if ((number_of_players_string.length() == 1) && isdigit(number_of_players_string[0]) && (stoi(number_of_players_string) <= 4) && (stoi(number_of_players_string) > 1))
 		{
 			number_of_players = stoi(number_of_players_string);
 			number_of_players_complete = true;
 		}
 	} while (!number_of_players_complete);
 
-	for (unsigned int i = 0; i < number_of_players; i++)
+	for (int i = 0; i < number_of_players; i++)
 	{
 		player_names[i] = display_manager.get_player_data("Type in your player name, player " + std::to_string(i + 1) + ".");
 	}

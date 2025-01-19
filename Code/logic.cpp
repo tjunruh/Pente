@@ -484,7 +484,7 @@ bool logic::board_slot_open(int row, int column)
 	return open;
 }
 
-bool logic::place_piece(int row, int column, int player)
+bool logic::place_piece(int player, int row, int column)
 {
 	if ((row >= 0) && (row < NUMBER_OF_ROWS) && (column >= 0) && (column < NUMBER_OF_COLUMNS) && board_slot_open(row, column))
 	{

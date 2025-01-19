@@ -19,7 +19,8 @@ display::display(frame* main_display, frame* multipurpose_display) :
 	board.add_configuration("4", -1, -1, "(K)", '*');
 	board.add_configuration("cursor empty space", -1, -1, "*<*", '*');
 	board.add_configuration("cursor full space", -1, -1, "*?*", '*');
-	board.set_spacing(5, 5, 0, 0);
+	board.set_alignment("center block");
+	board.set_spacing(1, 0, 0, 0);
 	directions_label.set_spacing(1, 1, 0, 0);
 	directions_label.add_border(true);
 	main_frame->set_coordinate_width_multiplier(1, 1, 1);
