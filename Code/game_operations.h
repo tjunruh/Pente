@@ -8,7 +8,7 @@
 class game_operations
 {
 public:
-	game_operations(frame* main_display, frame* multipurpose_display);
+	game_operations(frame* main_display, frame* multipurpose_display, frame* settings_display, controls* game_controls);
 	void game_loop();
 
 	const std::string logo = R"(__/\\\\\\\\\\\\\_______________________________________________________________________)"
@@ -32,4 +32,5 @@ public:
 private:
 	logic logic_manager;
 	display display_manager;
+	controls* _game_controls;
 };

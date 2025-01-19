@@ -20,13 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\display.cpp" />
+    <ClCompile Include="..\file_management.cpp" />
     <ClCompile Include="..\game_operations.cpp" />
     <ClCompile Include="..\input_to_logic_interface.cpp" />
     <ClCompile Include="..\logic.cpp" />
     <ClCompile Include="..\Pente.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\default_controls.h" />
     <ClInclude Include="..\display.h" />
+    <ClInclude Include="..\file_management.h" />
     <ClInclude Include="..\game_operations.h" />
     <ClInclude Include="..\input_to_logic_interface.h" />
     <ClInclude Include="..\logic.h" />

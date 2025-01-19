@@ -3,9 +3,9 @@
 #include <ascii_io.h>
 #include "input_to_logic_interface.h"
 
-game_operations::game_operations(frame* main_display, frame* multipurpose_display) : display_manager(main_display, multipurpose_display)
+game_operations::game_operations(frame* main_display, frame* multipurpose_display, frame* settings_display, controls* game_controls) : display_manager(main_display, multipurpose_display, settings_display, game_controls)
 {
-
+	_game_controls = game_controls;
 }
 
 void game_operations::game_loop()
@@ -48,7 +48,7 @@ void game_operations::game_loop()
 			display_manager.set_board_directions_content(player_names[player_turn - 1] + ": place a piece.");
 			display_manager.display_board(board_data, logic_manager.get_cursor_row(), logic_manager.get_cursor_column());
 			input = ascii_io::getchar();
-			if (input == ascii_io::enter)
+			if (input == _game_controls->get_key("select"))
 			{
 				if (logic_manager.place_piece(player_turn, logic_manager.get_cursor_row(), logic_manager.get_cursor_column()))
 				{
@@ -58,9 +58,14 @@ void game_operations::game_loop()
 					turn_completed = true;
 				}
 			}
-			else if ((input == ascii_io::right) || (input == ascii_io::left) || (input == ascii_io::up) || (input == ascii_io::down))
+			else if ((input == _game_controls->get_key("right")) || (input == _game_controls->get_key("left")) || (input == _game_controls->get_key("up")) || (input == _game_controls->get_key("down")))
 			{
-				logic_manager.move_cursor(interface::user_to_logic(input));
+				logic_manager.move_cursor(interface::user_to_logic(input, _game_controls));
+			}
+			else if (input == _game_controls->get_key("help"))
+			{
+				display_manager.display_set_controls();
+				display_manager.display_board(board_data, logic_manager.get_cursor_row(), logic_manager.get_cursor_column());
 			}
 
 		} while (!turn_completed);
