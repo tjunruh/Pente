@@ -9,7 +9,7 @@
 
 int main()
 {
-    ascii_io::ascii_engine_init();
+    ascii_io::ascii_engine_init(true);
     frame* home_frame = new frame();
     frame* main_frame = new frame();
     frame* multipurpose_frame = new frame();
