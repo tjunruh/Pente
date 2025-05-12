@@ -18,8 +18,6 @@ public:
 	void display_set_controls();
 
 private:
-	std::vector<format_tools::index_format> build_central_element_color_structure(int color, bool bold);
-	std::vector<format_tools::index_format> build_complete_element_color_structure(int color, bool bold);
 	void reset_color(std::string control_name, int color_code);
 	void initialize_settings_menu();
 	
@@ -50,12 +48,6 @@ private:
 		setting_type type = regular;
 	};
 
-	enum color_type
-	{
-		central,
-		complete
-	};
-
 	const std::vector<control_settings_menu_item> control_settings_menu_items =
 	{
 		{"up", regular},
@@ -83,7 +75,6 @@ private:
 	{
 		std::string name_id = "";
 		std::string value = "";
-		color_type type = central;
 	};
 
 	struct config_color_group
@@ -94,11 +85,11 @@ private:
 
 	const std::vector<config_color_group> color_group_map
 	{
-		{"player 1 color", {{"1", "(X)", complete}}},
-		{"player 2 color", {{"2", "(O)", complete}}},
-		{"player 3 color", {{"3", "(H)", complete}}},
-		{"player 4 color", {{"4", "(K)", complete}}},
-		{"cursor over empty space color", {{"cursor empty", "*<*", central}}},
-		{"cursor over occupied space color", {{"cursor occupied", "*?*", central}}}
+		{"player 1 color", {{"1", "(X)"}}},
+		{"player 2 color", {{"2", "(O)"}}},
+		{"player 3 color", {{"3", "(H)"}}},
+		{"player 4 color", {{"4", "(K)"}}},
+		{"cursor over empty space color", {{"cursor empty", "*<*"}}},
+		{"cursor over occupied space color", {{"cursor occupied", "*?*"}}}
 	};
 };
