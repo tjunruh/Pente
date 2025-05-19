@@ -13,6 +13,8 @@ __/\\\\\\\\\\\\\________________________________________________________________
 
 Console application of Pente. It features multiplayer for two to four people.
 
+https://github.com/user-attachments/assets/e4f541d8-e7f6-41ac-a685-8f0441bf90cf
+
 # Windows
 
 Clone this repository and run the following command (Note that MSbuild.exe from Visual Studio 2022 must be in the System Environment Path variable):
